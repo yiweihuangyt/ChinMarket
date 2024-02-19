@@ -1,0 +1,8 @@
+<%= form_with url: search_path, method: :post, remote: :true do |form| %>
+    <%= form.text_field :search, placeholder: t(:"search for") %>
+    <%= form.label :postcode %>
+    <%= form.text_field :postcode, placeholder: "1234 AB" %>
+    <%= form.label :zoekbereik %>
+    <%= form.select :zoekbereik, [["< 3 km", "3"], ["< 5 km", "5"],["< 10 km", "10"], ["< 15 km", "15"], ["< 25 km", "25"], ["< 50 km", "50"], ["< 75 km", "75"]] %>
+    <%= form.submit t(:"search-button") %>
+<% end %>

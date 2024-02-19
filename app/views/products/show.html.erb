@@ -1,0 +1,115 @@
+<div>
+<div class="product-container">
+<%= link_to t(:back), root_path, class: "button-link" %>
+</div>
+<div class="product-container">
+        <div class="carousel-container">
+  <div class="carousel">
+    <% @product.image.each do |image| %>
+      <%= image_tag image %>
+    <% end %>
+  </div>
+  <a class="prev-arrow" onclick="changeSlide(-1)">&#10094;</a>
+  <a class="next-arrow" onclick="changeSlide(1)">&#10095;</a>
+</div>
+        <div class="product-details">
+            <h1 class="product-title"><%= @product.title %></h1>
+            <div class="product-price">
+                <% if @product.gereserveerd %>
+                        Gereserveerd
+                    <% elsif @product.price_type == "asking price" %>
+                        <%= number_to_currency(@product.price, unit: '€', separator: ',', delimiter: '.') %>
+                    <% else %>
+                        <%= t(@product.price_type) %>
+                    <% end %>
+            </div>
+            <p class="product-description"><%= @product.body %></p>
+            <p class="product-seller"><%= t(:seller) %>: <%= link_to @product.user.first_name + " " + @product.user.middle_name + " " + @product.user.surname, user_profile_path(@product.user) %><br /><%= t("phone number") %>:  <%= @product.user.phone_number %></p>
+            <p class="product-delivery"><%= t(:"delivery method") %>: <%= t(@product.delivery) %></p>
+            <% if @product.condition? %>
+            <p class="product-delivery"><%= t(:condition) %>: <%= t(@product.condition) %>
+            <% end %>
+            <p><%= @postcode %></p>
+            <div class="product-links">
+                <% if @product.user == current_user %>
+                <% if @product.gereserveerd %>
+                    <%= link_to t(:"remove reservation"), product_path(@product) + "/dereserveer", data: {
+                                    turbo_method: :get
+                                    }, class: "button-link" %>
+                <% else %>
+                    <%= link_to t(:reserve), product_path(@product) + "/reserveer", data: {
+                                    turbo_method: :get
+                                    }, class: "button-link" %>
+                <% end %>
+                <%= link_to t(:edit), edit_product_path(@product), class: "button-link" %>
+                <%= link_to t(:delete), product_path(@product), data: {
+                                turbo_method: :delete,
+                                turbo_confirm: "Weet u zeker dat u het wilt verwijderen?"
+                }, class: "button-link delete-link" %>
+                                <% end %>
+            </div>
+            <br />
+            <div class="product-links" style="max-width: 50%;">
+                <%= link_to image_tag("WhatsAppButton.svg"), "https://wa.me/" + @product.user.phone_number %>
+                <% if not @product.user == current_user %>
+                    <%= link_to t(:"report to ChinMarket"), product_path(@product) + "/flag", data: {
+                        turbo_method: :get,
+                        turbo_confirm: "You sure you want to report this post?"
+                  }, class: "button-link delete-link" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+
+    <% if @product.price_type == "bidding" %>
+    <div class="product-container">
+        <div class="product-details">
+        <h2><%= t(:Bids) %></h2>
+        <% @product.bids.each do |bid| %>
+        <div style="display: flex; justify-content: space-between;">
+            <p><%= bid.user.first_name + " " + bid.user.middle_name + " " + bid.user.surname %></p>
+            <p>€<%= bid.price %></p>
+            <p><%= bid.created_at.strftime("%d %b %Y") %></p>
+        </div>
+        <% end %>
+        <% if user_signed_in? %>
+        <h4><%= t(:"place a bid")%></h4>
+        <%= form_with model: [@product, @product.bids.build] do |form| %>
+        <%= form.label t("price input field") %>
+        <%= form.number_field :price %>
+        <%= form.submit t(:"place bid") %>
+        <% end %>
+        <% else %>
+        <h4><%= t(:"You must be logged in to place a bid") %></h4>
+        <% end %>
+        </div>
+    </div>
+    <% end %>
+
+<h2 style="margin: 5% 0 0 20%;"><%= t(:"other products you may like") %></h2>
+<div class="product-container" style="display: flex; justify-content: space-between;">
+
+<% @other_products.each do |product| %>
+                
+                <div class="grid-item">
+                    <div class="image-container-zoom">
+                    <%= link_to image_tag(product.image[0]), product %>
+                    </div>
+                    <%= link_to product.title, product, class: "item-tekst" %> 
+                    <% if product.distance.present? %>
+                    <p><%= product.distance.to_i.round %> km</p>
+                    <% end %>
+                    <p class="item-tekst">
+                    <% if product.gereserveerd %>
+                        Gereserveerd
+                    <% elsif product.price_type == "asking price" %>
+                        <%= number_to_currency(@product.price, unit: '€', separator: ',', delimiter: '.') %>
+                    <% else %>
+                        <%= t(product.price_type) %>
+                    <% end %>
+                    </p>
+                </div>
+            <% end %>
+</div>
+</div>
+    <%= javascript_include_tag 'carousel.js' %>

@@ -1,0 +1,98 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+nl:
+  category: "Categorie"
+  title: "Titel"
+  description: "Beschrijving"
+  price: "Prijs"
+  login: "Inloggen"
+  image: "Foto's"
+  sign in: "Log in"
+  sign_out: "Log uit"
+  settings: "Instellingen"
+  login: "Log in"
+  pickup: "Ophalen"
+  delivery: "Verzenden"
+  pickup/delivery: "Ophalen of Verzenden"
+  edit product: "Product aanpassen"
+  price_type: "Prijstype"
+  condition: "Conditie"
+  new: "Nieuw"
+  as new: "Zo goed als nieuw"
+  used: "Gebruikt"
+  not working: "Niet werkend"
+  asking price: "Vraagprijs"
+  bidding: "Bieden"
+  delivery method: "Levering"
+  choose: "Kies"
+  search: "Zoek"
+  seller: "Verkoper"
+  phone number: "Telefoonnummer"
+  home: "Home"
+  new advertisement: "Nieuwe Advertentie"
+  name: "Naam"
+  postcode: "Postcode"
+  password: "Wachtwoord"
+  password confirmation: "Wachtwoord bevestigen"
+  current password: "Huidig wachtwoord"
+  email: "Email"
+  add images: "Foto's toevoegen"
+  remove images: "Foto's verwijderen"
+  see description: "Zie beschrijving"
+  trade: "Ruilen"
+  free: "Gratis"
+  reserve: "Reserveer"
+  edit: "Wijzig"
+  delete: "Verwijder"
+  back: "⬅️ Terug"
+  report to ChinMarket: "Rapporteer aan ChinMarket"
+  submit: "Plaats Advertentie"
+  categories: "Categorieën"
+  other products you may like: "Andere producten die u misschien leuk vindt"
+  You must be logged in to place a bid: "Je moet ingelogd zijn om een bod te plaatsen"
+  remember_me: "Onthouden"
+  sign up: "Maak account"
+  forgot your password?: "Wachtwoord vergeten?"
+  remove reservation: "Verwijder reservering"
+  bids: "Biedingen"
+  search-button: "Zoek 🔎"
+  search for: "Zoeken naar"
+  price input field: "Bedrag (€)"
+  place bid: "Plaats bid"
+  place a bid: "Plaats een bid"
+  
+  navbar:
+    change_language: "Change Language"
+    cn: "Chinese"
+    nl: "Dutch"
+    en: "Englisch"
+  

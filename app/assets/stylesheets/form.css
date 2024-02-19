@@ -1,0 +1,97 @@
+/* Stijl voor formulierpagina */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group input[type="file"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.form-group .error-messages {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.form-group .submit-button {
+    text-align: right;
+}
+
+.form-group .submit-button input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-group .submit-button input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-group .submit-button input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.form-group.inline-fields {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-group.inline-fields label {
+    flex: 1;
+    max-width: 100px;
+}
+
+.form-group.inline-fields .name-inputs {
+    flex: 2;
+    display: flex;
+    gap: 5px;
+}
+
+.form-group.inline-fields input[type="text"] {
+    flex: 1;
+}

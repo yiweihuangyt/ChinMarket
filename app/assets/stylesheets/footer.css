@@ -1,0 +1,20 @@
+/* Algemene stijl voor de footer */
+footer {
+    background-color: #00497b; /* Achtergrondkleur van de footer */
+    color: #fff; /* Tekstkleur in de footer */
+    padding: 20px; /* Binnenafstand van de footer */
+    text-align: center; /* Tekst uitlijnen naar het midden */
+  }
+  
+  /* Stijl voor koppelingen in de footer */
+  footer a {
+    color: #fff; /* Kleur van koppelingen */
+    text-decoration: none; /* Geen onderstreping voor koppelingen */
+    margin: 0 10px; /* Buitenmarge voor koppelingen */
+  }
+  
+  /* Stijl voor koppelingen in de footer bij hover (wanneer de muis erover zweeft) */
+  footer a:hover {
+    text-decoration: underline; /* Onderstreping toevoegen bij hover */
+  }
+  

@@ -1,0 +1,330 @@
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-item {
+    width: 15%;
+    height: 15%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.item-tekst {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Voeg "..." toe aan het einde van te lange tekst */
+    white-space: nowrap;
+    /* Voorkom dat tekst wordt afgebroken naar nieuwe regels */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.product-container {
+    max-width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.product-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    white-space: normal;
+    /* Zorg ervoor dat de titel naar nieuwe regels breekt */
+}
+
+.product-details {
+    flex: 1;
+    padding: 20px;
+    overflow: hidden;
+    /* Voeg overflow toe om tekst die buiten beeld gaat te verbergen */
+}
+
+.product-image {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    /* Minimal width to prevent very small images */
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    /* Maintain aspect ratio and fill container */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-description {
+    margin-bottom: 20px;
+    white-space: normal;
+    word-wrap: break-word;
+    /* Zorg ervoor dat de beschrijving naar nieuwe regels breekt */
+}
+
+.product-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.edit-link,
+.delete-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.edit-link:hover,
+.delete-link:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.image-container-zoom {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    margin: 0 auto 10px;
+}
+
+.image-container-zoom img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.sidebar {
+    flex: 0 0 20%;
+    background-color: #9fff9e;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    /* Voeg afronding toe aan de hoeken van de sidebar */
+    margin: 20px;
+    margin-right: 0;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 5px;
+}
+
+.main-content {
+    flex: 0 0 75%;
+    padding: 20px 0 0 0;
+    background-color: #f5f5f5;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.link {
+    color: rgb(0, 2, 126);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.link:hover {
+    background-color: #555;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-link {
+    background-color: #dc3545;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+}
+
+.product-price p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-seller {
+    margin-bottom: 10px;
+}
+
+.product-delivery {
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 50%;
+    margin: auto;
+    overflow: hidden; /* Toegevoegd om ervoor te zorgen dat de afbeeldingen binnen het kader blijven */
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Overgang toegevoegd voor een vloeiende animatie */
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .prev-arrow,
+  .next-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .prev-arrow {
+    left: 10px;
+  }
+  
+  .next-arrow {
+    right: 10px;
+  }
+  
+
+/* app/assets/stylesheets/application.css */
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .language-dropdown .dropdown-toggle {
+    cursor: pointer;
+  }
+  
+  .language-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    z-index: 1000; /* Zet deze waarde hoger dan andere z-index waarden op de pagina */
+  }
+  
+  .language-dropdown:hover .dropdown-menu,
+  .language-dropdown .dropdown-menu:hover {
+    display: block;
+  }
+  
+  .language-dropdown .dropdown-menu li {
+    margin-bottom: 5px;
+  }
+  
+  .language-dropdown a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .language-dropdown a.active {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .image-container {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .remove-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  #products {
+    max-width: initial;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .product-container {
+        max-width: 100%;
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .grid-item {
+        width: initial;
+    }
+
+    /* Home pagina dingen hieronder (index) */
+
+    #products {
+        flex-wrap: initial;
+    }
+
+    .container {
+        display: initial;
+    }
+  }
+

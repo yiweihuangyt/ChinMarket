@@ -1,0 +1,9 @@
+<% if notice %>
+    <div class="product-container">
+    <p class="notice">🛈<%= notice %></p>
+    </div>
+<% elsif alert %>
+    <div class="product-container">
+    <p class="alert">⚠️<%= alert %></p>
+    </div>
+<% end %>
